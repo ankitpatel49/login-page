@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(71, 111, 138);
+        }
+        .container{
+            border: 0px solid black;
+            position: relative;
+            box-shadow:1px 1px 18px -3px ;
+            background-color: aliceblue;
+            height:450px;
+            width: 380px;
+            left: 40%;
+            top:100px;
+
+        }
+
+        .header{
+            border:0px solid black;
+           
+            position: relative;
+            height: 100px;
+            width: 380px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif0;
+            text-align: center;
+            font-size: xx-large;
+        }
+        #head{
+            padding-top: 8%;
+            background-color: rgb(26, 104, 205);
+            height: 80px;
+            font-size: xx-large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: aliceblue
+        }
+
+        #user{
+            height: 40px;
+            margin-top:40px;
+            margin-left: 20px;
+        }
+
+        #lock{
+            height: 40px;
+            margin-top:40px;
+            margin-left: 20px;
+        }
+
+        #uname{
+            border:1px solid lightgray;
+            height:40px;
+            width: 280px;
+            border-radius: 5px;
+            position: absolute;
+            top:30.5%;
+            left:19%;
+            outline: none;
+        
+        }
+        #uname:hover{
+            box-shadow: 1px 1px 10px 0px rgb(135, 135, 237);
+            
+        }
+
+        #pwd{
+            border:1px solid lightgray;
+            height:40px;
+            width: 280px;
+            border-radius: 5px;
+            position: absolute;
+            top:49.5%;
+            left:19%;
+            outline: none;
+        }
+        #pwd:hover{
+            box-shadow: 1px 1px 10px 0px rgb(135, 135, 237);
+            
+        }
+        #text{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(17, 85, 174);
+            margin-left: 26px;
+        }
+        #button{
+            position: absolute;
+            margin-top:2%;
+            margin-left: 25px;
+            font-size: medium;
+            border: 1px solid  rgb(26, 104, 205);
+            border-radius: 5px;
+            width: 330px;
+            height: 50px;
+            color:white;
+            background-color: rgb(26, 104, 205);
+         }
+         #button:hover{
+            background-color: rgb(34, 34, 241);
+         }
+
+         .text{
+            margin-top: 26%;
+            text-align: center;
+            font-size: larger;
+        }
+
+        #signup{
+            color: blue;
+        }
+
+        #error1{
+            color: red;
+            position:absolute;
+            top:34%;
+            left:96%;
+        }
+
+        #error2{
+            color: red;
+            position:absolute;
+            top:53%;
+            left:96%;
+        }
+        
+    </style>
+
+
+	
+<script>
+     function Login()
+     {
+        var uname=document.getElementById("uname").value;
+        var pwd=document.getElementById("pwd").value;
+        
+        if(uname=="")
+        {
+            document.getElementById("uname").style.border="1px solid red";
+            document.getElementById("error1").innerHTML="*";
+        }
+        
+        if(pwd=="")
+        {
+            document.getElementById("pwd").style.border="1px solid red";
+            document.getElementById("error2").innerHTML="*";
+        }
+        
+        if(uname != "" && pwd!= "")
+        {
+            if(uname =="admin" &&  pwd == "admin")
+            {
+                document.write("Login Success");
+            }
+            else
+            {
+                document.write("Login Fail");
+            }
+        }
+        
+    }
+    
+</script>
+
+</head>
+<body>
+    <form name="Loginform">
+    <div class="container">
+        <div class="header">
+           <p id="head"> Login Form</p>
+        </div>
+
+
+        <img src="user.png" id="user">
+        <input type="text" name="uname" id="uname" placeholder="username">
+					<br>
+					<span id="error1"></span>
+
+        <img src="lockicon.png" id="lock">
+        <input type="password" name="pwd" id="pwd" placeholder="password">
+					<br>
+					<span id="error2"></span>
+
+        <p id="text">Forgot password?</p>
+
+        <input type="button"  id="button" value="Login" onclick="Login()"/>	
+
+        <p class="text">Not a member?  <span id="signup">signup now</span> </p>
+
+         </div>
+
+        </form>
+</body>
+</html>
